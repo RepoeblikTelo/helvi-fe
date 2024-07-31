@@ -26,6 +26,10 @@ export const columns: ColumnDef<CleaningServices>[] = [
     enableHiding: false,
   },
   {
+    accessorKey: "user.name",
+    header: "USER",
+  },
+  {
     accessorKey: "address",
     header: "ADDRESS",
   },

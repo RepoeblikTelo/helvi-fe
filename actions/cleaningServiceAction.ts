@@ -1,10 +1,15 @@
 "use server";
 
 import { db } from "@/lib/db";
+import { currentUser } from "@clerk/nextjs/server";
 import { CLEANINGTYPE } from "@prisma/client";
 
 export const getAllCleaningServices = async () => {
-  const cleaning_services = await db.cleaningServices.findMany();
+  const cleaning_services = await db.cleaningServices.findMany({
+    include: {
+      user: true,
+    },
+  });
 
   return cleaning_services;
 };
@@ -22,26 +27,26 @@ export const getAllUserCleaningServices = async (user_id: string) => {
 export const createNewCleaningService = async (
   address: string,
   description: string,
-  customer_contact: string,
-  type: CLEANINGTYPE,
-  user_id: string,
-  cleaning_date: Date
+  customer_contact: string
 ) => {
-  try {
-    const createCleaningService = await db.cleaningServices.create({
-      data: {
-        address,
-        cleaning_date,
-        customer_contact,
-        description,
-        type,
-        user_id,
-      },
-    });
+  const user = await currentUser();
 
-    return createCleaningService;
-  } catch (err) {
-    console.log(err);
+  if (user) {
+    try {
+      const createCleaningService = await db.cleaningServices.create({
+        data: {
+          address,
+          cleaning_date: new Date(),
+          customer_contact,
+          description,
+          user_id: user.id,
+        },
+      });
+
+      return createCleaningService;
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 
