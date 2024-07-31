@@ -10,6 +10,8 @@ import { Button } from "./ui/button";
 
 import toast from "react-hot-toast";
 import { redirect, useRouter } from "next/navigation";
+import { createNewBlog } from "@/actions/blogAction";
+import FileUpload from "./FileUpload";
 
 type Props = {};
 
@@ -18,27 +20,21 @@ const EditableEditor = () => {
   const router = useRouter();
 
   const [title, setTitle] = useState<string>();
+  const [url, setUrl] = useState<string>();
 
   const { theme } = useTheme();
   const blockNoteTheme =
     theme === "light" || theme === "dark" ? theme : "light";
 
-  function fakePromise() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const randomNumber = Math.random();
-        if (randomNumber >= 0.5) {
-          resolve("Data berhasil diambil!");
-        } else {
-          reject(new Error("Gagal mengambil data."));
-        }
-      }, 1000);
-    });
+  async function insertData(title: string, html: string, url: string) {
+    try {
+      await createNewBlog(title, html, url);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   const handleSave = async () => {
-    console.log("title", title);
-    console.log("content", editor.document);
     const html = await editor.blocksToHTMLLossy(editor.document);
 
     if (title == undefined || title == "") {
@@ -48,19 +44,20 @@ const EditableEditor = () => {
       return;
     }
 
-    toast.promise(fakePromise(), {
+    toast.promise(insertData(title, html, url), {
       loading: "Loading...",
       success: "Berhasil!",
       error: "Gagal!",
     });
 
     setTimeout(() => {
-      router.push("/");
+      router.push("/admin/blogs");
     }, 1000);
   };
 
   return (
     <div className="flex flex-col gap-4">
+      <FileUpload apiEndpoint="avatar" onChange={setUrl} value={url} />
       <TextareaAutosize
         placeholder="Untitled"
         className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none"

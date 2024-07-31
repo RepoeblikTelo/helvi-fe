@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "Next Shadcn Dashboard Starter",
-  description: "Basic dashboard with Next.js and Shadcn",
+  title: "Helvi | Dashboard",
+  description: "Helvi Dashboard",
 };
 
 export default function DashboardLayout({
@@ -14,6 +15,7 @@ export default function DashboardLayout({
 }) {
   return (
     <>
+      <Toaster />
       <Header />
       <div className="flex h-screen overflow-hidden">
         <Sidebar />

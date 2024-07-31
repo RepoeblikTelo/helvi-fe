@@ -11,11 +11,11 @@ export default function Header() {
       <nav className="flex h-14 items-center justify-between px-4">
         <div className="hidden lg:flex lg:items-center lg:justify-center lg:gap-2">
           <Image
-            src={"/logo.svg"}
+            src={"/logo.png"}
             draggable={false}
             alt="logo"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
           />
           <Link href={"/"} className="font-bold text-xl">
             Helvi

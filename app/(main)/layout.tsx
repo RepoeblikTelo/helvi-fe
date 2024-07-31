@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import React from "react";
 
 type Props = {
@@ -5,7 +7,13 @@ type Props = {
 };
 
 const layout = ({ children }: Props) => {
-  return <main className="h-full">{children}</main>;
+  return (
+    <main className="h-full">
+      <Navbar />
+      {children}
+      <Footer />
+    </main>
+  );
 };
 
 export default layout;

@@ -110,36 +110,184 @@ export type Employee = {
   profile_picture?: string | null; // Profile picture can be a string (URL) or null (if no picture)
 };
 
-export const navItems: NavItem[] = [
+export const userNavItems: NavItem[] = [
   {
     title: "Dashboard",
-    href: "/dashboard",
+    href: "/user",
     icon: "dashboard",
     label: "Dashboard",
   },
   {
-    title: "User",
-    href: "/dashboard/user",
+    title: "History Pengumpulan",
+    href: "/user/waste_exchanges",
+    icon: "waste_exchanges",
+    label: "History Pengumpulan",
+  },
+  {
+    title: "Jasa Kebersihan",
+    href: "/user/cleaning_services",
+    icon: "cleaning_service",
+    label: "Jasa Kebersihan",
+  },
+  {
+    title: "Olahan Sampah",
+    href: "/user/marketplace",
+    icon: "marketplace",
+    label: "Olahan Sampah",
+  },
+  {
+    title: "Pelaporan Sampah",
+    href: "/user/waste_reports",
+    icon: "waste_reports",
+    label: "Pelaporan Sampah",
+  },
+  {
+    title: "Pickup Sampah",
+    href: "/user/waste_schedules",
+    icon: "waste_schedule",
+    label: "Pickup Sampah",
+  },
+  {
+    title: "Komunitas",
+    href: "/user/communities",
+    icon: "communities",
+    label: "Komunitas",
+  },
+  {
+    title: "Event",
+    href: "/user/events",
+    icon: "events",
+    label: "Event",
+  },
+  {
+    title: "Login Harian",
+    href: "/user/daily",
+    icon: "waste_reports",
+    label: "Login Harian",
+  },
+  {
+    title: "Redeem Hadiah",
+    href: "/user/rewards",
+    icon: "rewards",
+    label: "Redeem Hadiah",
+  },
+  {
+    title: "Leaderboard",
+    href: "/user/leaderboards",
+    icon: "leaderboards",
+    label: "Leaderboard",
+  },
+];
+export const adminNavItems: NavItem[] = [
+  {
+    title: "Dashboard",
+    href: "/admin",
+    icon: "dashboard",
+    label: "Dashboard",
+  },
+  {
+    title: "Achievement",
+    href: "/admin/achievements",
+    icon: "achievements",
+    label: "Achievement",
+  },
+  {
+    title: "Admin Post",
+    href: "/admin/admin_posts",
+    icon: "admin_post",
+    label: "Admin Post",
+  },
+  {
+    title: "Berita",
+    href: "/admin/blogs",
+    icon: "blogs",
+    label: "Berita",
+  },
+  {
+    title: "Jasa Kebersihan",
+    href: "/admin/cleaning_services",
+    icon: "cleaning_service",
+    label: "Jasa Kebersihan",
+  },
+  {
+    title: "Komunitas",
+    href: "/admin/communities",
+    icon: "communities",
+    label: "Komunitas",
+  },
+  {
+    title: "Edukasi",
+    href: "/admin/educations",
+    icon: "blogs",
+    label: "Edukasi",
+  },
+  {
+    title: "Event",
+    href: "/admin/events",
+    icon: "events",
+    label: "Event",
+  },
+  {
+    title: "Log Kegiatan",
+    href: "/admin/log_activities",
+    icon: "log_histories",
+    label: "Log Kegiatan",
+  },
+  {
+    title: "Marketplace",
+    href: "/admin/marketplace",
+    icon: "marketplace",
+    label: "Marketplace",
+  },
+  {
+    title: "Misi Harian",
+    href: "/admin/missions",
+    icon: "mission",
+    label: "Misi Harian",
+  },
+  {
+    title: "Reward",
+    href: "/admin/rewards",
+    icon: "rewards",
+    label: "Reward",
+  },
+  {
+    title: "Pengguna",
+    href: "/admin/users",
     icon: "user",
-    label: "user",
+    label: "Pengguna",
   },
   {
-    title: "Employee",
-    href: "/dashboard/employee",
-    icon: "employee",
-    label: "employee",
+    title: "Penukaran Sampah",
+    href: "/admin/waste_exchanges",
+    icon: "waste_exchanges",
+    label: "Penukaran Sampah",
   },
   {
-    title: "Profile",
-    href: "/dashboard/profile",
-    icon: "profile",
-    label: "profile",
+    title: "Pelaporan Sampah",
+    href: "/admin/waste_reports",
+    icon: "waste_reports",
+    label: "Pelaporan Sampah",
   },
   {
-    title: "Kanban",
-    href: "/dashboard/kanban",
-    icon: "kanban",
-    label: "kanban",
+    title: "Jadwal Sampah Keliling",
+    href: "/admin/waste_schedules",
+    icon: "waste_schedule",
+    label: "Jadwal Sampah Keliling",
+  },
+];
+export const adminPostNavItems: NavItem[] = [
+  {
+    title: "Dashboard",
+    href: "/admin-post",
+    icon: "dashboard",
+    label: "Dashboard",
+  },
+  {
+    title: "Pengumpulan Sampah",
+    href: "/admin-post/waste_exchanges",
+    icon: "waste_exchanges",
+    label: "Pengumpulan Sampah",
   },
 ];
 

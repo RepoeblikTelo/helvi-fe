@@ -8,8 +8,8 @@ import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "Next JS Template",
-  description: "Template for next.js application",
+  title: "Helvi",
+  description: "Waste Bank Application",
 };
 
 export default function RootLayout({

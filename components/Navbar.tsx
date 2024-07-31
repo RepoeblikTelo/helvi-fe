@@ -36,6 +36,14 @@ const items = [
     name: "Event",
     url: "/events",
   },
+  {
+    name: "Berita",
+    url: "/blogs",
+  },
+  {
+    name: "Panduan",
+    url: "/educations",
+  },
 ];
 
 const Navbar = (props: Props) => {

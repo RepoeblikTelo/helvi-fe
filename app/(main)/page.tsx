@@ -1,116 +1,219 @@
+"use client";
+import TextEffect from "@/components/TextEffect";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Wrapper from "@/components/Wrapper";
+import {
+  CalendarClock,
+  Gamepad2,
+  Handshake,
+  Inbox,
+  Layers,
+  Newspaper,
+  ShieldPlus,
+  Store,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <Wrapper>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24 pt-40">
+      <main className="pt-40">
+        <div className="flex flex-col gap-4 mx-auto justify-center items-center text-center">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider flex gap-4">
+            Jaga <TextEffect />
+          </h2>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider">
+            Ciptakan{" "}
+            <span
+              className="underline"
+              style={{ textDecorationColor: "#1e40af" }}
+            >
+              Masa Depan
+            </span>
+          </h2>
+          <p className="text-muted-foreground max-w-lg">
+            HELVI bantu kamu kelolah sampah untuk menciptakan lingkungan yang
+            sehat demi masa depan yang berkelanjutan.
+          </p>
+          <div className="relative mt-14">
+            <Image
+              src={"/preview.png"}
+              alt="preview"
+              width={1200}
+              height={1200}
+              className="object-contain border-2 border-muted rounded-2xl"
+            />
+            <div className="bottom-0 top-[50%] bg-gradient-to-t from-background left-0 right-0 absolute z-10"></div>
+          </div>
+        </div>
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-10" />
 
-        <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-          {/* <p className="fixed text-primary left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-            Get started by editing&nbsp;
-            <code className="font-mono font-bold">app/page.tsx</code>
-          </p> */}
-          <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-            <a
-              className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className="dark:invert"
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+        <div className="mt-40">
+          <div className="flex flex-col gap-4 justify-center items-center text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              Our Features
+            </h2>
+            <p className="text-muted-foreground max-w-lg">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+              omnis delectus! Laudantium, hic voluptate accusamus cumque
+              dignissimos eos aliquid dolore.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+            <Card>
+              <CardHeader>
+                <div className="flex gap-4 items-center">
+                  <div className="border rounded-md p-4">
+                    <Layers />
+                  </div>
+                  <h3 className="text-xl">Pengumpulan Sampah</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Dengan HELVI, kamu dapat menukarkan sampah-sampahmu untuk
+                  mendapatkan poin dan koin yang dapat ditukarkan dengan hadiah
+                  menarik dari HELVI.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="border rounded-md p-4">
+                    <Inbox />
+                  </div>
+                  <h3 className="text-xl">Pelaporan Sampah</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  HELVI berkerjasama dengan dinas kesehatan setempat supaya kamu
+                  bisa melaporkan penumpukan sampah.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="border rounded-md p-4">
+                    <ShieldPlus />
+                  </div>
+                  <h3 className="text-xl">Jasa Kebersihan</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Kamu dapat memanggil HELVI untuk menjemput sampah-sampahmu.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="border rounded-md p-4">
+                    <CalendarClock />
+                  </div>
+                  <h3 className="text-xl">Sampah Keliling</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  HELVI menjemput sampahmu yang kemudian kami kelola agar
+                  menjadi barang yang memiliki nilai guna.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="border rounded-md p-4">
+                    <Handshake />
+                  </div>
+                  <h3 className="text-xl">Komunitas & Event</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  HELVI mengayomi komunitas-komunitas peduli lingkungan dalam
+                  menjalakan acaranya. Kamu bisa berkontribusi ke
+                  komunitas-komunitas tersebut untuk menciptakan masa depan yang
+                  berkelanjutan.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="border rounded-md p-4">
+                    <Newspaper />
+                  </div>
+                  <h3 className="text-xl">Blog & Edukasi</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Guna menciptakan smarty society yang penting untuk menciptakan
+                  masa depan yang berkelanjutan, HELVI melakukan edukasi tentang
+                  menjaga lingkungan lewat blog.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="border rounded-md p-4">
+                    <Gamepad2 />
+                  </div>
+                  <h3 className="text-xl">Sistem Gamifikasi</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  HELVI menyadari dengan menyatukan unsur gim ke dalam HELVI,
+                  HELVI dapat memberikan daya tarik kepada generasi muda.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="border rounded-md p-4">
+                    <Store />
+                  </div>
+                  <h3 className="text-xl">Pembelian Olahan Sampah</h3>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  HELVI menjual berbagai olahan bekas sampah yang dapat kamu
+                  beli.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
-        <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-          <Image
-            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className="mb-3 text-2xl font-semibold">
-              Docs{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
+        <div className="mt-40">
+          <div className="flex flex-col gap-4 justify-center items-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              Let's Use Our
             </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className="mb-3 text-2xl font-semibold">
-              Learn{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              Platform <span className="text-primary">Business</span>
             </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
+            <p className="text-muted-foreground max-w-lg text-center">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+              omnis delectus! Laudantium, hic voluptate accusamus cumque
+              dignissimos eos aliquid dolore.
             </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className="mb-3 text-2xl font-semibold">
-              Templates{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              Explore starter templates for Next.js.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className="mb-3 text-2xl font-semibold">
-              Deploy{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-              Instantly deploy your Next.js site to a shareable URL with Vercel.
-            </p>
-          </a>
+          </div>
         </div>
       </main>
     </Wrapper>

@@ -1,7 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardNav } from "@/components/DashboardNav";
-import { navItems } from "@/constants/data";
+import {
+  userNavItems,
+  adminNavItems,
+  adminPostNavItems,
+} from "@/constants/data";
 import { cn } from "@/lib/utils";
 import { ChevronLeft } from "lucide-react";
 import { useSidebar } from "@/hooks/useSidebar";
@@ -13,12 +17,24 @@ type SidebarProps = {
 export default function Sidebar({ className }: SidebarProps) {
   const { isMinimized, toggle } = useSidebar();
   const [status, setStatus] = useState(false);
+  const [role, setRole] = useState("USER");
 
   const handleToggle = () => {
     setStatus(true);
     toggle();
     setTimeout(() => setStatus(false), 500);
   };
+
+  const getCurrentUser = async () => {
+    const res = await fetch("/api/users");
+    const data = await res.json();
+
+    setRole(data.role);
+  };
+
+  useEffect(() => {
+    getCurrentUser();
+  }, []);
   return (
     <nav
       className={cn(
@@ -38,7 +54,11 @@ export default function Sidebar({ className }: SidebarProps) {
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <div className="mt-3 space-y-1">
-            <DashboardNav items={navItems} />
+            {role === "USER" && <DashboardNav items={adminNavItems} />}
+            {role === "ADMIN" && <DashboardNav items={adminNavItems} />}
+            {role === "ADMIN_POST" && (
+              <DashboardNav items={adminPostNavItems} />
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,12 @@
 import {
   AlertTriangle,
   ArrowRight,
+  Award,
+  Book,
+  BookOpenCheck,
+  Box,
+  Building2,
+  CalendarClock,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -8,10 +14,16 @@ import {
   Command,
   CreditCard,
   File,
+  FileBadge,
+  FileClock,
   FileText,
+  Gift,
+  Handshake,
   HelpCircle,
   Image,
+  Inbox,
   Laptop,
+  Layers,
   LayoutDashboardIcon,
   Loader2,
   LogIn,
@@ -19,17 +31,21 @@ import {
   LucideProps,
   Moon,
   MoreVertical,
+  Newspaper,
   Pizza,
   Plus,
   Settings,
+  ShieldPlus,
+  Store,
   SunMedium,
   Trash,
+  Trophy,
   Twitter,
   User,
   User2Icon,
   UserX2Icon,
-  X
-} from 'lucide-react';
+  X,
+} from "lucide-react";
 
 export type Icon = LucideIcon;
 
@@ -60,6 +76,22 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  waste_exchanges: Layers,
+  cleaning_service: ShieldPlus,
+  marketplace: Store,
+  waste_reports: Inbox,
+  waste_schedule: CalendarClock,
+  communities: Handshake,
+  events: Book,
+  mission: BookOpenCheck,
+  rewards: Gift,
+  achievements: Award,
+  leaderboards: Trophy,
+  admin_post: Building2,
+  log_histories: FileClock,
+  badges: FileBadge,
+  products: Box,
+  blogs: Newspaper,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
@@ -78,5 +110,5 @@ export const Icons = {
     </svg>
   ),
   twitter: Twitter,
-  check: Check
+  check: Check,
 };
