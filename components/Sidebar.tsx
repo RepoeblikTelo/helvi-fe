@@ -54,7 +54,7 @@ export default function Sidebar({ className }: SidebarProps) {
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <div className="mt-3 space-y-1">
-            {role === "USER" && <DashboardNav items={adminNavItems} />}
+            {role === "USER" && <DashboardNav items={userNavItems} />}
             {role === "ADMIN" && <DashboardNav items={adminNavItems} />}
             {role === "ADMIN_POST" && (
               <DashboardNav items={adminPostNavItems} />

@@ -29,12 +29,12 @@ export default async function page({ searchParams }: paramsProps) {
   const country = searchParams.search || null;
   const offset = (page - 1) * pageLimit;
 
-  const user = await currentUser();
-  let res = [];
+  // const user = await currentUser();
+  // let res = [];
 
-  if (user) {
-    res = await getAllUserCleaningServices(user.id);
-  }
+  // if (user) {
+  //   res = await getAllUserCleaningServices(user.id);
+  // }
 
   // const employeeRes = await res.json();
   // const totalUsers = employeeRes.total_users; //1000
@@ -47,12 +47,12 @@ export default async function page({ searchParams }: paramsProps) {
 
         <div className="flex items-start justify-between">
           <Heading
-            title={`jasa Kebersihan (${res.length})`}
+            title={`jasa Kebersihan`}
             description="Manage jasa kebersihan"
           />
 
           <Link
-            href={"/dashboard/employee/new"}
+            href={"/user/cleaning_services/new"}
             className={cn(buttonVariants({ variant: "default" }))}
           >
             <Plus className="mr-2 h-4 w-4" /> Add New
